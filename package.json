@@ -1,0 +1,29 @@
+{
+  "name": "blackscreen",
+  "version": "1.0.0",
+  "description": "Information screen",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Svbeck/Blackscreen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Svbeck/Blackscreen/issues"
+  },
+  "homepage": "https://github.com/Svbeck/Blackscreen#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.7",
+    "mongoose": "^5.0.15"
+  },
+  "devDependencies": {
+    "gulp-nunjucks-render": "^2.2.2"
+  }
+}
