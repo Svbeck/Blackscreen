@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var app = express();
 var index = require('./routes/index');
 var users = require('./routes/users');
+var catalog = require('./routes/catalog');
 
 var monogDB = 'mongodb://Svbeck:Gullf1sk3n@ds157521.mlab.com:57521/blackscreen';
 mongoose.connect(monogDB);
@@ -13,15 +14,15 @@ mongoose.Promise = global.Promise;
 module.exports = app;//lets it be imported by www
 var db = mongoose.connection;
 
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
-app.set('views',path.join(__dirname,'views'))
-app.set('view engine', 'pug')
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.set('views',path.join(__dirname,'views'));
+app.set('view engine', 'pug');
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', index)
-app.use('/users', users)
-
+app.use('/', index);
+app.use('/users', users);
+app.use('/catalog',catalog);
 
 db.on('error', console.error.bind(console, 'connection error: '));
 db.once('open', function(){
